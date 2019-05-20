@@ -12,6 +12,8 @@ class CharacterSelectionViewController: UIViewController, UITableViewDelegate, U
 
     @IBOutlet weak var tableView: UITableView!
     
+    var selectedCharacter : DnDCharacter!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -36,7 +38,14 @@ class CharacterSelectionViewController: UIViewController, UITableViewDelegate, U
     
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        //aaaa
+        performSegue(withIdentifier: "Character Chosen", sender: self)
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        super.prepare(for: segue, sender: sender)
+        
+        if let dest = segue.destination as? GameViewController{
+            dest.playerCharacter = selectedCharacter
+        }
+    }
 }
