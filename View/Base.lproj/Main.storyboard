@@ -69,7 +69,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Z6A-TB-fJs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="945" y="5"/>
+            <point key="canvasLocation" x="948" y="21"/>
         </scene>
         <!--Character Creation View Controller-->
         <scene sceneID="bVx-Lt-Qgp">
@@ -79,14 +79,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Name" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xW7-Ne-9Bf">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xW7-Ne-9Bf">
                                 <rect key="frame" x="10" y="194" width="394" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lcs-RL-TD0">
-                                <rect key="frame" x="10" y="254" width="394" height="35"/>
+                                <rect key="frame" x="10" y="797" width="394" height="35"/>
                                 <color key="backgroundColor" red="0.050545648950000001" green="0.72146211140000005" blue="0.58044831900000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                 <state key="normal" title="Create Player">
@@ -96,14 +96,54 @@
                                     <action selector="createCharacter:" destination="mzA-at-cu4" eventType="touchUpInside" id="b7o-2N-x1h"/>
                                 </connections>
                             </button>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YbQ-1d-TMi">
+                                <rect key="frame" x="10" y="264" width="394" height="368"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vAN-8L-RNE">
+                                        <rect key="frame" x="0.0" y="0.0" width="394" height="368"/>
+                                        <subviews>
+                                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="FoL-Pz-AmG">
+                                                <rect key="frame" x="0.0" y="0.0" width="394" height="368"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="VHM-pe-igp">
+                                                    <size key="itemSize" width="50" height="50"/>
+                                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                                </collectionViewFlowLayout>
+                                                <cells/>
+                                            </collectionView>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstItem="FoL-Pz-AmG" firstAttribute="leading" secondItem="vAN-8L-RNE" secondAttribute="leading" id="5Ho-Av-Edw"/>
+                                            <constraint firstItem="FoL-Pz-AmG" firstAttribute="top" secondItem="vAN-8L-RNE" secondAttribute="top" id="MnW-5X-YsS"/>
+                                            <constraint firstAttribute="trailing" secondItem="FoL-Pz-AmG" secondAttribute="trailing" id="VJ9-C4-0tb"/>
+                                            <constraint firstAttribute="bottom" secondItem="FoL-Pz-AmG" secondAttribute="bottom" id="vQi-Gq-cqh"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="vAN-8L-RNE" secondAttribute="trailing" id="HvE-w0-S4a"/>
+                                    <constraint firstAttribute="bottom" secondItem="vAN-8L-RNE" secondAttribute="bottom" id="SNC-Ep-iBF"/>
+                                    <constraint firstItem="vAN-8L-RNE" firstAttribute="leading" secondItem="YbQ-1d-TMi" secondAttribute="leading" id="XHw-Ta-FZW"/>
+                                    <constraint firstItem="vAN-8L-RNE" firstAttribute="width" secondItem="YbQ-1d-TMi" secondAttribute="width" id="aD7-iY-b9m"/>
+                                    <constraint firstItem="vAN-8L-RNE" firstAttribute="height" secondItem="YbQ-1d-TMi" secondAttribute="height" id="g1o-qo-b6t"/>
+                                    <constraint firstItem="vAN-8L-RNE" firstAttribute="top" secondItem="YbQ-1d-TMi" secondAttribute="top" id="sdE-VF-CIO"/>
+                                </constraints>
+                            </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="YbQ-1d-TMi" firstAttribute="leading" secondItem="I12-0m-pqE" secondAttribute="leading" constant="10" id="AWs-I5-5CZ"/>
+                            <constraint firstItem="YbQ-1d-TMi" firstAttribute="centerY" secondItem="TVz-zx-7aq" secondAttribute="centerY" id="D1d-JA-fIA"/>
+                            <constraint firstItem="I12-0m-pqE" firstAttribute="bottom" secondItem="Lcs-RL-TD0" secondAttribute="bottom" constant="30" id="NXB-Kk-3he"/>
                             <constraint firstItem="Lcs-RL-TD0" firstAttribute="centerX" secondItem="TVz-zx-7aq" secondAttribute="centerX" id="Ngf-O5-emI"/>
                             <constraint firstItem="xW7-Ne-9Bf" firstAttribute="centerX" secondItem="TVz-zx-7aq" secondAttribute="centerX" id="OCI-7U-ZKn"/>
+                            <constraint firstItem="YbQ-1d-TMi" firstAttribute="top" secondItem="xW7-Ne-9Bf" secondAttribute="bottom" constant="40" id="OdV-m3-t7C"/>
                             <constraint firstItem="Lcs-RL-TD0" firstAttribute="leading" secondItem="I12-0m-pqE" secondAttribute="leading" constant="10" id="Owu-TB-XVf"/>
                             <constraint firstItem="xW7-Ne-9Bf" firstAttribute="leading" secondItem="I12-0m-pqE" secondAttribute="leading" constant="10" id="gZG-ge-pWX"/>
-                            <constraint firstItem="Lcs-RL-TD0" firstAttribute="top" secondItem="xW7-Ne-9Bf" secondAttribute="bottom" constant="30" id="tF5-9w-gRE"/>
+                            <constraint firstItem="I12-0m-pqE" firstAttribute="trailing" secondItem="YbQ-1d-TMi" secondAttribute="trailing" constant="10" id="yd6-n0-hCI"/>
                             <constraint firstItem="xW7-Ne-9Bf" firstAttribute="top" secondItem="I12-0m-pqE" secondAttribute="top" constant="150" id="ysA-YM-SS2"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="I12-0m-pqE"/>
@@ -119,6 +159,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="sCX-ae-AXD"/>
+        <segue reference="lIz-XP-MfK"/>
     </inferredMetricsTieBreakers>
 </document>

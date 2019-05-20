@@ -8,7 +8,7 @@
 
 import Foundation
 
-enum Classes : Int, Codable{
+enum DnDClass : Int, Codable{
     case BARBARIAN
     case BARD
     case CLERIC

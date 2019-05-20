@@ -11,7 +11,7 @@ import Foundation
 // ABSTRACT CLASS, DO NOT INSTATIATE
 class DnDCharacter : Codable{
     
-    var dndClass : Classes
+    var dndClass : DnDClass
     
     var name  : String
     var level : Int
@@ -19,7 +19,7 @@ class DnDCharacter : Codable{
     
     var moves : [Move] = []
     
-    required init(){
+    init(){
         self.dndClass = .NONE
         self.level = 1
         self.exp = 0
