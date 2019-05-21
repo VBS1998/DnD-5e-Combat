@@ -12,10 +12,12 @@ class GameViewController: UIViewController {
 
     var playerCharacter : DnDCharacter!
     
+    @IBOutlet weak var infoLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        
+        infoLabel.text = "\(playerCharacter.name) / \(playerCharacter.dndClass)"
     }
     
 

@@ -11,6 +11,7 @@ import UIKit
 class PlayerTableViewCell: UITableViewCell {
 
     @IBOutlet weak var name: UILabel!
+    var dndCharacter : DnDCharacter?
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

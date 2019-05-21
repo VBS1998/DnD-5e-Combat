@@ -14,12 +14,12 @@ class UserServices{
     static func writePlayer(_ player: Player){
         do{
             let data = try JSONEncoder().encode(player)
-            UserDefaults.standard.set(data, forKey: "Characters")
+            UserDefaults.standard.set(data, forKey: "Player")
         }catch{}
     }
     static func readPlayer() -> Player?{
         do{
-            let data = UserDefaults.standard.data(forKey: "Characters")
+            let data = UserDefaults.standard.data(forKey: "Player")
             if let data = data{
                 return try JSONDecoder().decode(Player.self, from: data)
             }

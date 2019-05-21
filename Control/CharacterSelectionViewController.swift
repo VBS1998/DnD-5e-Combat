@@ -32,13 +32,15 @@ class CharacterSelectionViewController: UIViewController, UITableViewDelegate, U
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "PlayerTableViewCell", for: indexPath) as? PlayerTableViewCell
-        cell?.name.text = UserServices.readPlayer()?.characters[indexPath.row].name
+        cell?.dndCharacter = UserServices.readPlayer()?.characters[indexPath.row]
+        cell?.name.text = cell?.dndCharacter?.name
         return cell!
     }
     
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        performSegue(withIdentifier: "Character Chosen", sender: self)
+        selectedCharacter = (tableView.cellForRow(at: indexPath) as? PlayerTableViewCell)?.dndCharacter
+        performSegue(withIdentifier: "characterChosen", sender: self)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
